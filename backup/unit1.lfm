@@ -1,0 +1,78 @@
+object Form1: TForm1
+  Left = 2547
+  Height = 491
+  Top = 200
+  Width = 731
+  Anchors = [akTop, akRight]
+  Caption = 'Pong Game'
+  ClientHeight = 491
+  ClientWidth = 731
+  Color = clBlack
+  OnCreate = FormCreate
+  OnMouseMove = ControlPaddle
+  LCLVersion = '2.2.0.4'
+  object Paddle: TShape
+    Left = 160
+    Height = 25
+    Top = 464
+    Width = 103
+    OnMouseMove = PaddleMouseMove
+  end
+  object Ball: TShape
+    Left = 176
+    Height = 20
+    Top = 360
+    Width = 20
+  end
+  object lblScore: TLabel
+    Left = 549
+    Height = 20
+    Top = 8
+    Width = 168
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = 'Score: 0'
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Lucida Grande'
+    ParentFont = False
+  end
+  object lblGameOver: TLabel
+    Left = 8
+    Height = 40
+    Top = 128
+    Width = 723
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'Game Over'
+    Font.Color = clWhite
+    Font.Height = -32
+    Font.Name = 'Lucida Grande'
+    ParentFont = False
+  end
+  object lblRestart: TLabel
+    Left = 8
+    Height = 40
+    Top = 184
+    Width = 723
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'Restart'
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Lucida Grande'
+    ParentFont = False
+    OnClick = lblRestartClick
+    OnMouseEnter = lblRestartMouseEnter
+    OnMouseLeave = lblRestartMouseLeave
+  end
+  object tmrGame: TTimer
+    Interval = 50
+    OnTimer = tmrGameTimer
+    Left = 33
+    Top = 26
+  end
+end
